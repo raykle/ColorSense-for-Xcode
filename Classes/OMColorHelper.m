@@ -482,9 +482,9 @@
 				}
 			} else {
 				if (colorType == OMColorTypeUIRGBA || colorType == OMColorTypeUIWhite || colorType == OMColorTypeUIConstant) {
-					colorString = [NSString stringWithFormat:@"[UIColor colorWithRed:%.3f green:%.3f blue:%.3f alpha:%.3f]", red, green, blue, alpha];
+					colorString = [NSString stringWithFormat:@"[UIColor colorWithRed:%d/255.0 green:%d/255.0 blue:%d/255.0 alpha:%.3f]", (int)(red * 255), (int)(green * 255), (int)(blue * 255), alpha];
 				} else if (colorType == OMColorTypeUIRGBAInit || colorType == OMColorTypeUIWhiteInit) {
-					colorString = [NSString stringWithFormat:@"[[UIColor alloc] initWithRed:%.3f green:%.3f blue:%.3f alpha:%.3f]", red, green, blue, alpha];
+					colorString = [NSString stringWithFormat:@"[[UIColor alloc] initWithRed:%d/255.0 green:%d/255.0 blue:%d/255.0 alpha:%.3f]", (int)(red * 255), (int)(green * 255), (int)(blue * 255), alpha];
 				}
 				else if (colorType == OMColorTypeNSConstant || colorType == OMColorTypeNSRGBACalibrated || colorType == OMColorTypeNSWhiteCalibrated) {
 					colorString = [NSString stringWithFormat:@"[NSColor colorWithCalibratedRed:%.3f green:%.3f blue:%.3f alpha:%.3f]", red, green, blue, alpha];
